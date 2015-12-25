@@ -1,0 +1,32 @@
+
+<div ng-controller="Posts as p" class="container">
+  <div class="row">
+    <div ng-repeat="post in p.posts" class="col-xs-4">
+          <div>
+              <a ng-href="{{post.id}}" ng-bind-html="post.title['rendered']" class="animated bounceInLeft" delay="0.1s"></a>
+          </div>
+          <div class="animated bounceInRight" >
+              <div ng-bind-html="post.excerpt.rendered"></div>
+          </div>
+          <!--
+          <div>Created: {{post.date }}</div>
+          <div>Created GMT: {{post.date_gmt}}</div>
+          <div>Modified: {{post.modified }}</div>
+          <div>Modified GMT: {{post.modified_gmt }}</div>
+
+          <div>Title rendered as trusted: <h3 ng-bind="post.title['rendered']"></h3></div>
+          <div>Slug: {{post.slug}}</div>
+          <div>Type: {{post.type}}</div>
+          <div></div>
+
+
+
+          <div>Featured Image: {{post.featured_image}}</div>
+          <div>Comment: {{post.comment_status}}</div>
+          <div>Ping Status: {{post.ping_status}}</div>
+          <div>Sticky: {{post.sticky}}</div>
+          <div>Format: {{post.format}}</div>
+          -->
+    </div>
+  </div>
+</div>

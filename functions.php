@@ -35,14 +35,54 @@ function pragmatics_enqueue_scripts() {
     'angularjs-sanitize',
     get_stylesheet_directory_uri() . '/node_modules/angular-sanitize/angular-sanitize.min.js'
   );
-
+  wp_register_script(
+    'angularjs-resource',
+    get_stylesheet_directory_uri() . '/node_modules/angular-resource/angular-resource.min.js'
+  );
+  wp_register_script(
+    'angularjs-hateoas',
+    get_stylesheet_directory_uri() . '/node_modules/angular-hateoas/build/angular-hateoas.min.js'
+  );
+  wp_register_script(
+    'angularjs-ui-router',
+    get_stylesheet_directory_uri() . '/node_modules/angular-ui-router/build/angular-ui-router.min.js'
+  );
+  wp_register_script(
+    'angularjs-animate',
+    get_stylesheet_directory_uri() . '/node_modules/angular-animate/angular-animate.min.js'
+  );
 
 
   wp_enqueue_script(
-    'pragmatics-angular-app',
+    'pragmatics-app',
     get_stylesheet_directory_uri() . '/app/pragmatics-app.js',
-    array( 'pragmatics-jquery', 'pragmatics-bootstrap' ,'angularjs', 'angularjs-route' ,'angularjs-sanitize')
+    array( 'pragmatics-jquery', 'pragmatics-bootstrap' ,'angularjs',
+      'angularjs-route' ,'angularjs-sanitize','angularjs-resource','angularjs-hateoas',
+      'angularjs-ui-router', 'angularjs-animate')
   );
+
+  wp_enqueue_script(
+    'pragmatics-posts',
+    get_stylesheet_directory_uri() . '/app/pragmatics-posts.js',
+    array( 'pragmatics-app')
+  );
+  wp_enqueue_script(
+    'pragmatics-pages',
+    get_stylesheet_directory_uri() . '/app/pragmatics-pages.js',
+    array( 'pragmatics-app')
+  );
+
+  wp_enqueue_script(
+    'pragmatics-route',
+    get_stylesheet_directory_uri() . '/app/pragmatics-route.js',
+    array( 'pragmatics-app')
+  );
+  wp_enqueue_script(
+    'pragmatics-services',
+    get_stylesheet_directory_uri() . '/app/pragmatics-services.js',
+    array( 'pragmatics-app')
+  );
+
 
   wp_localize_script(
     'angularjs',

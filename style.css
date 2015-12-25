@@ -44,3 +44,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .special{
   font-family: 'Special Elite';
 }
+.post .ng-enter {
+  animation: fadeIn 1s;
+}
+
+.post .ng-leave {
+  animation: fadeOut 1s;
+}
