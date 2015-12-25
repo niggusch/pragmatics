@@ -1,0 +1,19 @@
+{
+  "name": "pragmatics",
+  "version": "0.0.1",
+  "author": "Nicolas Schwarzentrub",
+  "description": "WordPress theme using AngularJS and WP-API",
+  "scripts": {
+    "start": "node expressserver.js"
+  },
+  "dependencies": {
+    "jquery": "2.1.4",
+    "bootstrap": "3.3.6",
+    "angular" :"1.4.8",
+    "angular-route" :"1.4.8",
+    "angular-sanitize" :"1.4.8",
+    "animate.css" : "",
+    "lodash": "~2.4.1"
+  },
+  "license": "gpl-3"
+}

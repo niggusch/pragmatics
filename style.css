@@ -1,0 +1,46 @@
+/*
+Theme Name: pragmatics
+Theme URI: https://pragmatics.ch
+Author: Nicolas Schwarzentrub
+Author URI: https://wordpress.org/
+Description: First theme using bootstrap, angular and so on.
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: pragmatics, angularjs, rest, ajax, bootstrap
+Text Domain: pragmatics
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* use Charis SIL - Regular in .woff format */
+@font-face {
+  font-family: CharisSILW;
+  src: url(font/CharisSIL-R.woff);
+}
+/* use Charis SIL - Italic in .woff format */
+@font-face {
+  font-family: CharisSILW;
+  font-style: italic;
+  src: url(font/CharisSIL-I.woff);
+}
+
+@font-face {
+  font-family: CharisSILW;
+  font-weight: bold;
+  src: url(font/CharisSIL-B.woff);
+}
+
+@font-face {
+  font-family: CharisSILW;
+  font-weight: bold;
+  font-style: italic;
+  src: url(font/CharisSIL-BI.woff);
+}
+
+.charis{
+    font-family: CharisSILW, sans-serif;
+}
+.special{
+  font-family: 'Special Elite';
+}
