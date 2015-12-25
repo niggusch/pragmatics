@@ -1,10 +1,19 @@
 (function() {
   'use strict';
 
-  var pragmaticsApp = angular.module('pragmaticsApp', [
+  var pragmaticsApp = angular.module('pragmaticsApp',
+    [
     'ngRoute',
-    'ngSanitize'
-  ]);
+    'ngSanitize',
+    'ngResource',
+    'hateoas',
+    'ngAnimate'
+    ]
+  );
+
+  pragmaticsApp.constant('REST_API_URL', 'http://demo.wp-api.org');
+  pragmaticsApp.constant('REST_API_PATH', '/wp-json/wp/v2');
+  //pragmaticsApp.constant('REST_API_POST', '/posts');
 
 
   // set the configuration

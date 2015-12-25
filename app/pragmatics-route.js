@@ -3,19 +3,26 @@
   // get the module
   var pragmaticsApp = angular.module('pragmaticsApp');
 
-  pragmaticsApp.config(['$routeProvider','$locationProvider',
-      function($routeProvider, $locationProvider) {
-
+  pragmaticsApp.config(['$routeProvider','$locationProvider','HateoasInterceptorProvider',
+      function($routeProvider, $locationProvider, HateoasInterceptorProvider) {
+          HateoasInterceptorProvider.transformAllResponses();
           $locationProvider.html5Mode(true);
 
           $routeProvider.
               when('/', {
-                  templateUrl: PragMatics.partialsDir +'/posts.html',
-                  controller: 'Posts as vm'
+                  templateUrl: PragMatics.partialsDir +'/posts.html'
+
               }).
-              when('/:ID', {
-                  templateUrl: PragMatics.partialsDir  + 'post.html',
-                  controller: 'Post as vm'
+              when('/:POST_ID', {
+                  templateUrl: PragMatics.partialsDir  + 'post.html'
+
+              }).
+              when('/pages/:PAGE_ID', {
+                  templateUrl: PragMatics.partialsDir  + 'pages.html'
+
+              }).
+              when('/pages', {
+                  templateUrl: PragMatics.partialsDir  + 'page.html'
               }).
               otherwise({
                   redirectTo: '/'
