@@ -1,11 +1,11 @@
 
-<div ng-controller="Posts as p" class="container">
-  <div class="container" ng-repeat="post in p.posts">
+<div ng-controller="Pages as p" class="container">
+  <div class="container" ng-repeat="page in p.pages">
         <div>
-            <a ng-href="{{post.id}}" ng-bind-html="post.title['rendered']"></a>
+            <a ng-href="{{page.id}}" ng-bind-html="page.title['rendered']"></a>
         </div>
         <div>
-            <div ng-bind-html="post.excerpt.rendered"></div>
+            <div ng-bind-html="page.excerpt.rendered"></div>
         </div>
         <!--
         <div>Created: {{post.date }}</div>
