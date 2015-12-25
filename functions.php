@@ -39,9 +39,21 @@ function pragmatics_enqueue_scripts() {
 
 
   wp_enqueue_script(
-    'pragmatics-angular-app',
+    'pragmatics-app',
     get_stylesheet_directory_uri() . '/app/pragmatics-app.js',
     array( 'pragmatics-jquery', 'pragmatics-bootstrap' ,'angularjs', 'angularjs-route' ,'angularjs-sanitize')
+  );
+
+  wp_enqueue_script(
+    'pragmatics-posts',
+    get_stylesheet_directory_uri() . '/app/pragmatics-posts.js',
+    array( 'pragmatics-app')
+  );
+
+  wp_enqueue_script(
+    'pragmatics-route',
+    get_stylesheet_directory_uri() . '/app/pragmatics-route.js',
+    array( 'pragmatics-app')
   );
 
   wp_localize_script(

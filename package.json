@@ -12,7 +12,8 @@
     "angular" :"1.4.8",
     "angular-route" :"1.4.8",
     "angular-sanitize" :"1.4.8",
-    "animate.css" : "",
+    "angular-hateoas" :"0.2.5",
+    "animate.css" : "3.4.0",
     "lodash": "~2.4.1"
   },
   "license": "gpl-3"
