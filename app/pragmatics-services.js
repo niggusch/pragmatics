@@ -4,6 +4,7 @@
   var pragmaticsApp = angular.module('pragmaticsApp');
 
 
+  // maybe give it a try: https://github.com/jeffsebring/angular-wp-api, instead of $http
 
   pragmaticsApp.factory('PostsBackend', ['REST_API_URL', 'REST_API_PATH','$http',
     function (REST_API_URL, REST_API_PATH, $http) {

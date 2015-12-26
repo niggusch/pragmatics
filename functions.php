@@ -11,6 +11,11 @@ function pragmatics_enqueue_scripts() {
   //register animate
   wp_enqueue_style( 'pragmatics-animate',   get_stylesheet_directory_uri() . '/node_modules/animate.css/animate.min.css', array(), null );
 
+  wp_enqueue_style( 'pragmatics-style',   get_stylesheet_directory_uri() . '/style.css', array(), null );
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-  <footer>
+  <footer class="sticky-footer">
     <div class="container">
       &copy; <?php echo date( 'Y' ); ?> pragmatics GmbH
     </div>
