@@ -10,8 +10,9 @@ Thats it. The root directory sholud be placed in your WordPress `themes` folder
 ### Used frameworks
  * WP-API, https://github.com/WP-API/WP-API
  * AngularJS
+ * UI-Router http://angular-ui.github.io/ui-router/
  * JQuery
- * animate.css
+ * animate.css https://daneden.github.io/animate.css/
  * node
  ...
  Just have a look at the package.json

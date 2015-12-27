@@ -19,14 +19,14 @@
   /*
    *  Posts controller
    */
-  pragmaticsApp.controller('Post', ['$http','$routeParams','$sce','PostsBackend' ,function($http , $routeParams, $sce,postsBackend){
+  pragmaticsApp.controller('Post', ['$http','$stateParams','$sce','PostsBackend' ,function($http , $stateParams, $sce,postsBackend){
               var that = this;
               that.renderTrustedHtml = function(html_code)
               {
                   return $sce.trustAsHtml(html_code);
               };
 
-              var promise = postsBackend.getPost($routeParams.POST_ID);
+              var promise = postsBackend.getPost($stateParams.POST_ID);
               promise.then(function (post) {
                     console.log("Promise fullfiled, got single post");
                     that.post= post;

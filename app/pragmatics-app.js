@@ -7,18 +7,18 @@
     'ngSanitize',
     'ngResource',
     'hateoas',
-    'ngAnimate'
+    'ui.router'
     ]
   );
 
   pragmaticsApp.constant('REST_API_URL', 'http://demo.wp-api.org');
   pragmaticsApp.constant('REST_API_PATH', '/wp-json/wp/v2');
-  //pragmaticsApp.constant('REST_API_POST', '/posts');
 
 
   // set the configuration
-  pragmaticsApp.run(['$rootScope', function($rootScope){
-    // the following data is fetched from the JavaScript variables created by wp_localize_script(), and stored in the Angular rootScope
+  pragmaticsApp.run(['$rootScope',function($rootScope){
+    // the following data is fetched from the JavaScript variables created by wp_localize_script(),
+    // and stored in the Angular rootScope
     $rootScope.dir = BlogInfo.url;
     $rootScope.site = BlogInfo.site;
     $rootScope.api = AppAPI.url;

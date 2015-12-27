@@ -2,7 +2,7 @@
 <div ng-controller="Pages as p" class="container">
   <div class="container" ng-repeat="page in p.pages">
         <div>
-            <a ng-href="{{page.id}}" ng-bind-html="page.title['rendered']"></a>
+            <a ng-href="pages/{{page.id}}" ng-bind-html="page.title['rendered']"></a>
         </div>
         <div>
             <div ng-bind-html="page.excerpt.rendered"></div>

@@ -50,7 +50,7 @@
       }
 
       function getSinglePage(pageId) {
-          return $http.get(BACKEND_URL+"/"+pageId)
+          return $http.get(BACKEND_URL+"/pages/"+pageId)
               .then(function (response) {
                   return response.data;
               })

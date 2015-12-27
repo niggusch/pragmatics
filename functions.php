@@ -16,9 +16,6 @@ function pragmatics_enqueue_scripts() {
 
 
 
-
-
-
   //JQuery
   wp_register_script(
     'pragmatics-jquery',
@@ -56,12 +53,16 @@ function pragmatics_enqueue_scripts() {
     'angularjs-animate',
     get_stylesheet_directory_uri() . '/node_modules/angular-animate/angular-animate.min.js'
   );
-
+  wp_register_script(
+    'pragmatics-jquery.livequery',
+    get_stylesheet_directory_uri() . '/vendor/jquery.livequery/jquery.livequery.js',
+      array( 'pragmatics-jquery')
+  );
 
   wp_enqueue_script(
     'pragmatics-app',
     get_stylesheet_directory_uri() . '/app/pragmatics-app.js',
-    array( 'pragmatics-jquery', 'pragmatics-bootstrap' ,'angularjs',
+    array( 'pragmatics-jquery', 'pragmatics-jquery.livequery', 'pragmatics-bootstrap' ,'angularjs',
       'angularjs-route' ,'angularjs-sanitize','angularjs-resource','angularjs-hateoas',
       'angularjs-ui-router', 'angularjs-animate')
   );

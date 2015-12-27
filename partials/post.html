@@ -1,13 +1,13 @@
 
 <div ng-controller="Post as p" class="container">
   <header>
-    <h1 ng-bind-html="p.post.title['rendered']"></h1>
+    <h1 ng-bind-html="p.post.title['rendered']" animate="bounceInLeft" delay="0.1s"></h1>
   </header>
 
 
   <section class="row">
     <article class="col-xs-12">
-        <div ng-bind-html="p.post.content.rendered"></div>
+        <div ng-bind-html="p.post.content.rendered" animate="bounceInRight" delay="0.1s"></div>
     </article
   </section>
 </div>
