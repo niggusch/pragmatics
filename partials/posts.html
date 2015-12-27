@@ -1,5 +1,5 @@
 
-<div ng-controller="Posts as p" class="container">
+<div ng-controller="Post as p" class="container">
   <!-- see http://stackoverflow.com/questions/20137496/angular-js-ng-repeat-for-creating-grid -->
  <!-- groupBy -->
 
@@ -30,26 +30,7 @@
       </div>
       <div animate="zoomInLeft" delay="0.{{2* ($index+2)}}s">
           <div ng-bind-html="p.posts[$index + 2].excerpt.rendered"></div>
-          <!--<code>{{p.posts[$index + 2]}}</code>-->
       </div>
     </div>
   </div>
-
-    <!--
-            <div>Created: {{post.date | date:'medium' }}</div>
-          <div>Modified: {{post.modified | date: 'medium'}}</div>
-          <div>Title rendered as trusted: <h3 ng-bind="post.title['rendered']"></h3></div>
-          <div>Slug: {{post.slug}}</div>
-          <div>Type: {{post.type}}</div>
-          <div></div>
-
-
-
-          <div>Featured Image: {{post.featured_image}}</div>
-          <div>Comment: {{post.comment_status}}</div>
-          <div>Ping Status: {{post.ping_status}}</div>
-          <div>Sticky: {{post.sticky}}</div>
-          <div>Format: {{post.format}}</div>
-
-  -->
 </div>

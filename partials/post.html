@@ -1,5 +1,5 @@
 
-<div ng-controller="Post as p" class="container">
+<div ng-controller="Post as p" class="container" ng->
   <header>
     <h1 ng-bind-html="p.post.title['rendered']" animate="bounceInLeft" delay="0.1s"></h1>
   </header>
@@ -9,33 +9,9 @@
     <article class="col-xs-12">
         <div ng-bind-html="p.post.content.rendered" animate="bounceInRight" delay="0.1s"></div>
     </article
+
+    <div>
+      <a ng-click="p.back()" ng-if="previousState">Zurück</a>
+    </div>
   </section>
 </div>
-
-<!--
-<div>Full content with ng-bind-html
-  <div ng-bind-html="vm.post.content['rendered']"></div>
-</div>
-<div>Id: {{vm.post.id}}</div>
-<div>Created: {{vm.post.date }}</div>
-<div>Created GMT: {{vm.post.date_gmt}}</div>
-<div>Modified: {{vm.post.modified }}</div>
-<div>Modified GMT: {{vm.post.modified_gmt }}</div>
-
-<div>Title rendered as trusted: <h3 ng-bind-html="vm.renderTrustedHtml(vm.post.title['rendered'])"></h3></div>
-<div>Slug: {{vm.post.slug}}</div>
-<div>Type: {{vm.post.type}}</div>
-<div></div>
-<div>Link:
-    <a ng-href="{{vm.post.link}}">Full vm.post</a>
-</div>
-
-<div>Full Post
-    <div ng-bind-html="vm.renderTrustedHtml(vm.post.content['rendered'])"></div>
-</div>
-<div>Featured Image: {{vm.post.featured_image}}</div>
-<div>Comment: {{vm.post.comment_status}}</div>
-<div>Ping Status: {{vm.post.ping_status}}</div>
-<div>Sticky: {{vm.post.sticky}}</div>
-<div>Format: {{vm.post.format}}</div>
--->

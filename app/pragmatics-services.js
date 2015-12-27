@@ -13,6 +13,7 @@
       var BACKEND_URL = REST_API_PATH;
       //var BACKEND_URL = 'wp-json/wp/v2/posts/';
 
+
       return {
           getPosts: getAllPosts,
           getPost:  getSinglePost,
@@ -23,6 +24,8 @@
       function getAllPosts() {
           return $http.get(BACKEND_URL+'/posts/')
               .then(function (response) {
+                  console.debug(response);
+                  console.debug(response.headers('X-WP-TotalPages'));
                   return response.data;
               })
               .catch(function (response) {
@@ -31,8 +34,10 @@
       }
 
       function getSinglePost(postId) {
+         //TODO check if postId is number else use ?filter[name]=' + slug
           return $http.get(BACKEND_URL+"/posts/"+postId)
               .then(function (response) {
+                  console.debug(response);
                   return response.data;
               })
               .catch(function (response) {
@@ -42,6 +47,7 @@
       function getAllPages() {
           return $http.get(BACKEND_URL+'/pages/')
               .then(function (response) {
+                  console.debug(response);
                   return response.data;
               })
               .catch(function (response) {
@@ -52,6 +58,7 @@
       function getSinglePage(pageId) {
           return $http.get(BACKEND_URL+"/pages/"+pageId)
               .then(function (response) {
+                  console.debug(response);
                   return response.data;
               })
               .catch(function (response) {
