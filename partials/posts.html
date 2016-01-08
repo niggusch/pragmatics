@@ -2,12 +2,15 @@
 <div ng-controller="Post as p" class="container">
   <!-- see http://stackoverflow.com/questions/20137496/angular-js-ng-repeat-for-creating-grid -->
  <!-- groupBy -->
+ <h1> All Posts</h1>
 
   <div ng-repeat="post in p.posts" ng-if="$index % 3 == 0" class="row">
 
     <div class="col-xs-4">
       <div>
+        <h2>
           <a ng-href="{{p.posts[$index].id}}" ng-bind-html="p.posts[$index].title['rendered']" animate="bounce" delay="0.{{2* $index}}s"></a>
+        </h2>
       </div>
       <div animate="zoomInLeft" delay="0.{{2* $index}}s">
           <div ng-bind-html="p.posts[$index].excerpt.rendered"></div>

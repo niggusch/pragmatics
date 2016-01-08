@@ -1,7 +1,6 @@
 
 <div ng-controller="Pages as p" class="container">
-  <div class="container" ng-repeat="page in p.pages">
-
+  <div class="container" ng-repeat="page in p.getPages()">
         <div class="flipcard">
           <div class="front">
             <div>

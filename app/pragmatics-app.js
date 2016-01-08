@@ -22,7 +22,9 @@
     $rootScope.dir = BlogInfo.url;
     $rootScope.site = BlogInfo.site;
     $rootScope.api = AppAPI.url;
-    $rootScope.partials = PragMatics.partials;
+
+    $rootScope.partials = PragMatics.partialsDir;
+    $rootScope.templates = PragMatics.templatesDir;
 
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;

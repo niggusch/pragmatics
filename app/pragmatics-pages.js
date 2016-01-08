@@ -6,7 +6,7 @@
   pragmaticsApp.controller('Pages', ['$http','$resource','PostsBackend',function($http,$resource,postsBackend ){
           var vm = this;
           vm.getPages = function(){
-            return pages
+            return vm.pages
           }
           var promise = postsBackend.getPages();
           promise.then(function (pages) {

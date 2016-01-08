@@ -44,12 +44,45 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .special{
   font-family: 'Special Elite';
 }
+.lapis{
+  background-color: #1F4788;
+  color: #fff
+}
+.steel{
+  background-color: #4B77BE;
+  color: #fff
+}
+.jordi{
+  background-color: #89C4F4;
+  color: #fff
+}
+
+body.float
+{
+    margin-top: 100px;
+}
+nav.float{
+
+      position          : fixed;
+      z-index           : 999;
+      top               : 0;
+      left              : 0;
+      right             : 0;
+}
+
+div.section {
+    margin-top: -50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    line-height: 1.75em;
+}
 
 .sticky-footer {
-    position: absolute;
+    position: fixed;
+    z-index: 999;
     bottom: 0;
     width: 100%;
-    height: 30px;
+    height: 60px;
     background-color: #f5f5f5;
 }
 
@@ -116,10 +149,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -webkit-transform: rotateY(180deg);
 }
 /*
+* bootstrap carousel
+*/
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 98%;
+    margin: auto;
+}
+/*
 * Responsive circle
 */
 .circle {
-    width:50%;
+    width:100%;
 }
 .circle:hover::after{
       background: gray;

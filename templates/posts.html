@@ -1,0 +1,35 @@
+
+<div>
+  <!-- see http://stackoverflow.com/questions/20137496/angular-js-ng-repeat-for-creating-grid -->
+ <!-- groupBy -->
+  <div ng-repeat="post in posts" ng-if="$index % 3 == 0" class="row">
+
+    <div class="col-xs-4">
+      <div>
+          <a ng-href="{{posts[$index].id}}" ng-bind-html="posts[$index].title['rendered']" animate="bounce" delay="0.{{2* $index}}s"></a>
+      </div>
+      <div animate="zoomInLeft" delay="0.{{2* $index}}s">
+          <div ng-bind-html="posts[$index].excerpt.rendered"></div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div ng-if="posts[$index]">
+        <div>
+            <a ng-href="{{posts[$index + 1].id}}" ng-bind-html="posts[$index + 1].title['rendered']" animate="bounce" delay="0.{{2* ($index + 1)}}s"></a>
+        </div>
+        <div animate="zoomInLeft" delay="0.{{2* ($index+1)}}s">
+            <div ng-bind-html="posts[$index + 1].excerpt.rendered"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+
+      <div>
+          <a ng-href="{{posts[$index + 2].id}}" ng-bind-html="posts[$index + 2].title['rendered']" animate="bounce" delay="0.{{2* ($index + 2)}}s"></a>
+      </div>
+      <div animate="zoomInLeft" delay="0.{{2* ($index+2)}}s">
+          <div ng-bind-html="posts[$index + 2].excerpt.rendered"></div>
+      </div>
+    </div>
+  </div>
+</div>
