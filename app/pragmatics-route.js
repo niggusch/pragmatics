@@ -3,30 +3,49 @@
   // get the module
   var pragmaticsApp = angular.module('pragmaticsApp');
 
-  pragmaticsApp.config(['$routeProvider','$locationProvider','HateoasInterceptorProvider',
-      function($routeProvider, $locationProvider, HateoasInterceptorProvider) {
-          HateoasInterceptorProvider.transformAllResponses();
-          $locationProvider.html5Mode(true);
+  pragmaticsApp.config(['$stateProvider','$urlRouterProvider','$locationProvider',
+      function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-          $routeProvider.
-              when('/', {
-                  templateUrl: PragMatics.partialsDir +'/posts.html'
+            $locationProvider.html5Mode(true);
 
-              }).
-              when('/:POST_ID', {
-                  templateUrl: PragMatics.partialsDir  + 'post.html'
+            $stateProvider
 
-              }).
-              when('/pages/:PAGE_ID', {
-                  templateUrl: PragMatics.partialsDir  + 'pages.html'
+            .state('posts', {
+              url: "/posts/",
+              views: {
+                  "posts": {
+                    templateUrl: PragMatics.partialsDir +'/posts.html'
+                  }
+              }
+            })
 
-              }).
-              when('/pages', {
-                  templateUrl: PragMatics.partialsDir  + 'page.html'
-              }).
-              otherwise({
-                  redirectTo: '/'
-              });
+            .state('post', {
+              url: "/:POST_ID",
+              views: {
+                  "posts": {
+                    templateUrl: PragMatics.partialsDir +'/post.html'
+                  }
+              }
+            })
+
+            .state('pages', {
+              url: "/pages/",
+              views: {
+                  "pages": {
+                    templateUrl: PragMatics.partialsDir +'/pages.html'
+                  }
+              }
+            })
+
+            .state('page', {
+              url: "/pages/:PAGE_ID",
+              views: {
+                  "pages": {
+                    templateUrl: PragMatics.partialsDir +'/page.html'
+                  }
+              }
+            })
+            ;
       }]);
 
 

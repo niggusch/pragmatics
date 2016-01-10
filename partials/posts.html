@@ -1,32 +1,39 @@
 
-<div ng-controller="Posts as p" class="container">
-  <div class="row">
-    <div ng-repeat="post in p.posts" class="col-xs-4">
-          <div>
-              <a ng-href="{{post.id}}" ng-bind-html="post.title['rendered']" class="animated bounceInLeft" delay="0.1s"></a>
-          </div>
-          <div class="animated bounceInRight" >
-              <div ng-bind-html="post.excerpt.rendered"></div>
-          </div>
-          <!--
-          <div>Created: {{post.date }}</div>
-          <div>Created GMT: {{post.date_gmt}}</div>
-          <div>Modified: {{post.modified }}</div>
-          <div>Modified GMT: {{post.modified_gmt }}</div>
+<div ng-controller="Post as p" class="container">
+  <!-- see http://stackoverflow.com/questions/20137496/angular-js-ng-repeat-for-creating-grid -->
+ <!-- groupBy -->
+ <h1> All Posts</h1>
 
-          <div>Title rendered as trusted: <h3 ng-bind="post.title['rendered']"></h3></div>
-          <div>Slug: {{post.slug}}</div>
-          <div>Type: {{post.type}}</div>
-          <div></div>
+  <div ng-repeat="post in p.posts" ng-if="$index % 3 == 0" class="row">
 
+    <div class="col-xs-4">
+      <div>
+        <h2>
+          <a ng-href="{{p.posts[$index].id}}" ng-bind-html="p.posts[$index].title['rendered']" animate="bounce" delay="0.{{2* $index}}s"></a>
+        </h2>
+      </div>
+      <div animate="zoomInLeft" delay="0.{{2* $index}}s">
+          <div ng-bind-html="p.posts[$index].excerpt.rendered"></div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div ng-if="p.posts[$index]">
+        <div>
+            <a ng-href="{{p.posts[$index + 1].id}}" ng-bind-html="p.posts[$index + 1].title['rendered']" animate="bounce" delay="0.{{2* ($index + 1)}}s"></a>
+        </div>
+        <div animate="zoomInLeft" delay="0.{{2* ($index+1)}}s">
+            <div ng-bind-html="p.posts[$index + 1].excerpt.rendered"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
 
-
-          <div>Featured Image: {{post.featured_image}}</div>
-          <div>Comment: {{post.comment_status}}</div>
-          <div>Ping Status: {{post.ping_status}}</div>
-          <div>Sticky: {{post.sticky}}</div>
-          <div>Format: {{post.format}}</div>
-          -->
+      <div>
+          <a ng-href="{{p.posts[$index + 2].id}}" ng-bind-html="p.posts[$index + 2].title['rendered']" animate="bounce" delay="0.{{2* ($index + 2)}}s"></a>
+      </div>
+      <div animate="zoomInLeft" delay="0.{{2* ($index+2)}}s">
+          <div ng-bind-html="p.posts[$index + 2].excerpt.rendered"></div>
+      </div>
     </div>
   </div>
 </div>

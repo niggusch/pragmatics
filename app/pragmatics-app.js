@@ -7,22 +7,35 @@
     'ngSanitize',
     'ngResource',
     'hateoas',
-    'ngAnimate'
+    'ui.router'
     ]
   );
 
   pragmaticsApp.constant('REST_API_URL', 'http://demo.wp-api.org');
   pragmaticsApp.constant('REST_API_PATH', '/wp-json/wp/v2');
-  //pragmaticsApp.constant('REST_API_POST', '/posts');
 
 
   // set the configuration
-  pragmaticsApp.run(['$rootScope', function($rootScope){
-    // the following data is fetched from the JavaScript variables created by wp_localize_script(), and stored in the Angular rootScope
+  pragmaticsApp.run(['$rootScope','$state','$stateParams',function($rootScope, $state, $stateParams){
+    // the following data is fetched from the JavaScript variables created by wp_localize_script(),
+    // and stored in the Angular rootScope
     $rootScope.dir = BlogInfo.url;
     $rootScope.site = BlogInfo.site;
     $rootScope.api = AppAPI.url;
-    $rootScope.partials = PragMatics.partials;
+
+    $rootScope.partials = PragMatics.partialsDir;
+    $rootScope.templates = PragMatics.templatesDir;
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+    $rootScope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
+        $rootScope.previousState = from.name;
+        $rootScope.currentState = to.name;
+        console.log('Previous state:'+$rootScope.previousState);
+        console.log('Current state:'+$rootScope.currentState);
+    });
+
   }]);
 
 

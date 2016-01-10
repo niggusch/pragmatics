@@ -1,30 +1,19 @@
 
 <div ng-controller="Pages as p" class="container">
-  <div class="container" ng-repeat="page in p.pages">
-        <div>
-            <a ng-href="{{page.id}}" ng-bind-html="page.title['rendered']"></a>
+  <div class="container" ng-repeat="page in p.getPages()">
+        <div class="flipcard">
+          <div class="front">
+            <div>
+              <h3 ng-bind-html="page.title['rendered']"></h3>
+            </div>
+
+          </div>
+          <div class="back">
+            <div>
+              <div ng-bind-html="page.excerpt.rendered"></div>
+              <a ng-href="pages/{{page.id}}" ng-bind-html="page.title['rendered']"></a>
+            </div>
+          </div>
         </div>
-        <div>
-            <div ng-bind-html="page.excerpt.rendered"></div>
-        </div>
-        <!--
-        <div>Created: {{post.date }}</div>
-        <div>Created GMT: {{post.date_gmt}}</div>
-        <div>Modified: {{post.modified }}</div>
-        <div>Modified GMT: {{post.modified_gmt }}</div>
-
-        <div>Title rendered as trusted: <h3 ng-bind="post.title['rendered']"></h3></div>
-        <div>Slug: {{post.slug}}</div>
-        <div>Type: {{post.type}}</div>
-        <div></div>
-
-
-
-        <div>Featured Image: {{post.featured_image}}</div>
-        <div>Comment: {{post.comment_status}}</div>
-        <div>Ping Status: {{post.ping_status}}</div>
-        <div>Sticky: {{post.sticky}}</div>
-        <div>Format: {{post.format}}</div>
-        -->
   </div>
 </div>

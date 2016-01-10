@@ -1,5 +1,5 @@
-  <footer>
-    <div class="container">
+  <footer class="sticky-footer">
+    <div class="container-fluid">
       &copy; <?php echo date( 'Y' ); ?> pragmatics GmbH
     </div>
   </footer>

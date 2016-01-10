@@ -5,4 +5,4 @@
 	<title>Pragmatics Theme</title>
 	<?php wp_head(); ?>
 </head>
-<body>
+<body data-spy="scroll" data-target="#navigation" data-offset="60">
