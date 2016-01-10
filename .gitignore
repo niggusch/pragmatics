@@ -2,9 +2,4 @@
 /dist/*
 /assets/bower_components
 /assets/bower_components/*
-
-npm-debug.log
-
-*.log
-
 npm-debug.log
