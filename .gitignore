@@ -3,3 +3,5 @@
 /assets/bower_components
 /assets/bower_components/*
 /npm-debug.log
+
+npm-debug.log
