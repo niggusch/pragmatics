@@ -5,10 +5,13 @@
 
   pragmaticsApp.controller('Pages', ['$http','$resource','PostsBackend',function($http,$resource,postsBackend ){
           var vm = this;
+
           vm.getPages = function(){
-            return vm.pages
-          }
+            return vm.pages;
+          };
+
           var promise = postsBackend.getPages();
+
           promise.then(function (pages) {
                 console.log("Promise fullfiled, got pages");
                 vm.pages= pages;
@@ -22,9 +25,11 @@
               {
                   return $sce.trustAsHtml(html_code);
               };
-              var back = new function(){
+
+              var back = function(){
 
               };
+
               var promise = postsBackend.getPage($stateParams.PAGE_ID);
               promise.then(function (page) {
                     console.log("Promise fullfiled, got single page");

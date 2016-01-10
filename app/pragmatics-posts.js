@@ -12,17 +12,17 @@
                                     var vm = this;
                                     var posts = {};
                                     var post = null;
-
+                                    var promise = null;
                                     if($stateParams.POST_ID){
                                       // get single post
-                                      var promise = postsBackend.getPost($stateParams.POST_ID);
+                                      promise = postsBackend.getPost($stateParams.POST_ID);
                                       promise.then(function (result) {
                                             console.log("Promise fullfiled, got single post: "+ angular.toJson(result));
                                             vm.post= result;
                                       });
                                     } else {
                                       // get all posts
-                                      var promise = postsBackend.getPosts();
+                                     promise = postsBackend.getPosts();
                                       promise.then(function (result) {
                                             console.log("Promise fullfiled, got posts: "+angular.toJson(result));
                                             vm.posts= result;
@@ -37,10 +37,11 @@
 
                                     vm.back = function(){
                                         $state.go($rootScope.previousState);
-                                    }
+                                    };
+
                                     vm.allowedBack = function(){
                                         return $rootScope.previousState;
-                                    }
+                                    };
 
                                 }
                             ]
@@ -54,8 +55,9 @@
              post: '=post'
            },
           template: '<h1 ng-bind-html="post.title.rendered" animate="bounceInLeft" delay="0.1s"></h1>'
-      }
-  })
+      };
+  });
+
   pragmaticsApp.directive('postContent', function(){
       return {
           restrict: 'E',
@@ -63,8 +65,9 @@
              post: '=post'
            },
           template: '<div ng-bind-html="post.content.rendered" animate="bounceInRight" delay="0.1s"></div>'
-      }
-  })
+      };
+  });
+
   pragmaticsApp.directive('pragmaticsPost', function(){
       return {
           restrict: 'E',
@@ -72,8 +75,9 @@
              post: '=post'
            },
         templateUrl: PragMatics.templatesDir +'post.html'
-      }
-  })
+      };
+  });
+
   pragmaticsApp.directive('pragmaticsPosts', function(){
       return {
           restrict: 'E',
@@ -81,8 +85,8 @@
              posts: '=posts'
            },
         templateUrl: PragMatics.templatesDir +'posts.html'
-      }
-  })
+      };
+  });
 
   pragmaticsApp.directive('pragmaticsCarousel', function(){
       return {
@@ -91,8 +95,8 @@
              id: '@elementId'
            },
         templateUrl: PragMatics.templatesDir +'carousel.html'
-      }
-  })
+      };
+  });
 
   pragmaticsApp.directive('pragmaticsSection', function(){
       return {
@@ -102,8 +106,9 @@
              color:'@color'
            },
         templateUrl: PragMatics.templatesDir +'section.html'
-      }
-  })
+      };
+  });
+
   pragmaticsApp.directive('pragmaticsUiSection', function(){
       return {
           restrict: 'E',
@@ -113,12 +118,13 @@
 
            },
         templateUrl: PragMatics.templatesDir +'ui-section.html'
-      }
-  })
+      };
+  });
+
   pragmaticsApp.directive('pragmaticsStateDebug', function(){
       return {
         restrict: 'E',
         templateUrl: PragMatics.templatesDir +'state-debug.html'
-      }
-  })
+      };
+  });
 })();

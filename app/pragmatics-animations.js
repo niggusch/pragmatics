@@ -1,4 +1,3 @@
-'use strict';
 (
   function()
   {
@@ -6,7 +5,7 @@
     var ANIMATION_ATTR = "animate";
     var ANIMATION_DELAY = "delay";
 
-    var doAnimate = function(element){
+    var doAnimate = function(){
       var element = $(this);
       var cssClass   = element.attr(ANIMATION_ATTR);
       var cssDelay   = element.attr(ANIMATION_DELAY);
@@ -22,7 +21,7 @@
 
          element.addClass('animated').addClass(cssClass);
          element.css({ 'opacity': 1 });
-    }
+    };
 
 
 
@@ -37,9 +36,7 @@
         var section = $(this).attr('section');
         console.log("found section"+ section);
         if(section)
-          var elem = $(section)
-          if(elem)
-            $('html,body').animate({ scrollTop: elem.offset().top }, 500);
+            $('html,body').animate({ scrollTop: $(section).offset().top }, 500);
     });
 
     //Make Navigation float
